@@ -1,14 +1,45 @@
 /* Header Font */
 @import url("https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i");
 
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
+body {
+    background-image: url(back.jpg);
+    margin-bottom: 60px;
+}
+
+h2 {
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+h3 {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-size: medium;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
-    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 0;
+    background-color:#ff9a76;
+    display: flex;
+    text-align: center;
+    
 }
 
 .display-2 {
     font-family: 'Playfair Display', serif;
+}
+
+.card {
+    background-color: #679b9b;
+    color: white;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -19,15 +50,23 @@
     padding-top: 20px;
     background-color: #f1f1f1;
     height: 100%;
+    
+    
 }
 
 
-/* Set black background color, white text and some padding */
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-}
+  
+#footer {
+
+    background-color: red;
+    position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  }
+
 
 .carousel-item  img {
     width: 50vw;
