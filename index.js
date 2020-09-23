@@ -1,3 +1,4 @@
+//These arrays will populate our ingredient list.
 const meat = ["Chicken", "Beef", "Pork", "Bacon", "Beef Brisket", "Beef Fillet", "Chicken Breast", "Chicken Breasts", "Chicken Legs", "Chicken Thighs", "Chorizo", "Doner Meat", "Italian Fennel Sausages", "Lamb", "Lamb Loin Chops", "Lamb Mince", "Lean Minced Beef", "Parm Ham", "Duck", "Duck Legs", "Lamb Leg", "Lamb Shoulder", "Minced Beef", "Turkey Mince", "Lamb Kidney", "Beef Kidney", "Sausages", "Ham", "Haddock", "Smoked Haddock", "Beef Shin", "Minced Pork", "Ground Beef", "Goat Meat", "Tripe", "Ground Pork", "Pork Chops", "Kielbasa", "Polish Sausage"]
 
 const seaFood = ["Salmon", "King Prawns", "Mackerel", "Prawns", "Raw King Prawns", "Oysters", "White Fish", "White Fish Fillets", "Mussels", "Monkey Fish", "Squid", "Baby Squid", "Clams", "Tiger Prawns", "Cod", "Salt Cod", "Smoked Salmon", "Herring"]
@@ -19,3 +20,60 @@ const fats = ["Butter", "Chicken Stock", "Coconut Cream", "Cocunut Milk", "Chedd
 const powder = ["Baking Powder", "Bicarbonate Of Soda", "Corn Starch"]
 
 const liquids = ["Apple Cider Vinegar", "Dark Soy Sauce", "Dry White Wine", "Enchilada Sauce", "English Mustard", "Extra Virgin Olive Oil", "Garlic Sauce", "Golden Syrup", "Honey", "Hotsauce", "Lemon Juice", "Mustard", "Raspberry Jam", "Red Wine", "Soy Sauce", "Tomato Ketchup", "Vanilla", "Vanilla Extract", "Vinegar", "White Vinegar", "White Wine", "Barbeque Sauce", "Red Wine Vinegar", "Tomato Sauce", "Maple Syrup", "Tabasco Sauce", "White Wine Vinegar", "Mayonnaise"]
+
+//https://www.themealdb.com/api/json/v1/9973533/filter.php?i=
+
+
+function ingredientPopulate(list, id) {
+    for (let index = 0; index < list.length; index++) {
+        const element = list[index];
+        const listItem = `<input onclick="urlEndObjectPopulate('${element}')" class="ingredient" id=${element} type="checkbox">${element}</input>`
+        document.getElementById(id).innerHTML += listItem
+
+    }
+}
+
+ingredientPopulate(meat, "meat")
+ingredientPopulate(nuts, "nuts")
+
+
+let urlEndObject = {}
+let recipesObject = {}
+
+console.log(urlEndObject)
+
+function urlEndObjectPopulate(thisIngredient) {
+    url = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i="
+    if (urlEndObject[thisIngredient] === "active") {
+        urlEndObject[thisIngredient] = "inactive"
+    } else {
+        urlEndObject[thisIngredient] = "active"
+    }
+    console.log(urlEndObject[thisIngredient])
+    for (const key in urlEndObject) {
+        if (urlEndObject.hasOwnProperty(key)) {
+            const element = urlEndObject[key];
+            if (element === "active") {
+                url += key.replace(" ", "_")
+                url += ","
+            }
+        }
+    }
+    finalUrl = url.slice(0, -1)
+    urlArray = []
+    if (recipesObject[finalUrl] === "active") {
+        recipesObject[finalUrl] = "inactive"
+    } else {
+        recipesObject[finalUrl] = "active"
+    }
+    console.log(recipesObject[finalUrl])
+    for (const key in recipesObject) {
+        if (recipesObject.hasOwnProperty(key)) {
+            const element = recipesObject[key];
+            if (element === "active") {
+                urlArray.unshift(key)
+            }
+        }
+    }
+    console.log(urlArray)
+}
