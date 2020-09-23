@@ -23,33 +23,38 @@ const liquids = ["Apple Cider Vinegar", "Dark Soy Sauce", "Dry White Wine", "Enc
 
 //https://www.themealdb.com/api/json/v1/9973533/filter.php?i=
 
-
+//This function takes a array from above, and the id name of a div, and appends everything in the array as a checkbox to that div. The checkbox, on being clicked, runs a function.
 function ingredientPopulate(list, id) {
     for (let index = 0; index < list.length; index++) {
         const element = list[index];
-        const listItem = `<input onclick="urlEndObjectPopulate('${element}')" class="ingredient" id=${element} type="checkbox">${element}</input>`
+        //the id is the same as the items individual ingredient call in the api. If I can get a list of the selected ids, I'm in the money.
+        const listItem = `<input onclick="urlFinalizer('${element}')" class="ingredient" id=https://www.themealdb.com/api/json/v1/9973533/filter.php?i=${element.replace(" ", "_")} type="checkbox"><label for="${element}">${element}</label></input>`
         document.getElementById(id).innerHTML += listItem
-
     }
 }
 
 ingredientPopulate(meat, "meat")
 ingredientPopulate(nuts, "nuts")
 
-
+//these to variables enable me to check if an item is on the url string or not.
 let urlEndObject = {}
 let recipesObject = {}
 
-console.log(urlEndObject)
+//this array will theoretically populate the page.
 
-function urlEndObjectPopulate(thisIngredient) {
+
+//Here's what needs to happen: I need to populate a urlArray with the final URL that this function pops out, and with the id of all checked elements.
+
+
+//This function will take all selected ingredients and append them to the end of our API call.
+function urlFinalizer(thisIngredient) {
+    urlArray = []
     url = "https://www.themealdb.com/api/json/v2/9973533/filter.php?i="
     if (urlEndObject[thisIngredient] === "active") {
         urlEndObject[thisIngredient] = "inactive"
     } else {
         urlEndObject[thisIngredient] = "active"
     }
-    console.log(urlEndObject[thisIngredient])
     for (const key in urlEndObject) {
         if (urlEndObject.hasOwnProperty(key)) {
             const element = urlEndObject[key];
@@ -59,21 +64,28 @@ function urlEndObjectPopulate(thisIngredient) {
             }
         }
     }
-    finalUrl = url.slice(0, -1)
-    urlArray = []
-    if (recipesObject[finalUrl] === "active") {
-        recipesObject[finalUrl] = "inactive"
-    } else {
-        recipesObject[finalUrl] = "active"
-    }
-    console.log(recipesObject[finalUrl])
-    for (const key in recipesObject) {
-        if (recipesObject.hasOwnProperty(key)) {
-            const element = recipesObject[key];
-            if (element === "active") {
-                urlArray.unshift(key)
-            }
+    urlArray.push(url.slice(0, -1))
+    let ingredients = document.getElementsByClassName("ingredient")
+    for (let index = 0; index < ingredients.length; index++) {
+        const element = ingredients[index];
+        if (element.checked) {
+            urlArray.push(element.id)
+
+            // if (recipesObject[finalUrl] === "active") {
+            //     recipesObject[finalUrl] = "inactive"
+            // } else {
+            //     recipesObject[finalUrl] = "active"
+            // }
+            // console.log(recipesObject[finalUrl])
+            // for (const key in recipesObject) {
+            //     if (recipesObject.hasOwnProperty(key)) {
+            //         const element = recipesObject[key];
+            //         if (element === "active") {
+            //             urlArray.unshift(key)
+            //         }
+            //     }
+            // }
+            console.log(urlArray)
         }
     }
-    console.log(urlArray)
 }
