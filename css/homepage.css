@@ -1,0 +1,94 @@
+/* Header Font */
+@import url("https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i");
+
+html {
+    position: relative;
+}
+
+body {
+    background-image: url();
+    margin-bottom: 10%;
+}
+
+/* top navbar */ 
+.navbar {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+    background-color:#ff9a76;
+    display: flex;
+    text-align: center;  
+}
+
+/* main title */
+.display-2 {
+    font-family: 'Playfair Display', serif;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+/* text under main title */
+h3 {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-size: medium;
+}
+
+/* page container */
+.container {
+    height: 100vh; 
+    border: 1px yellow solid;
+    padding-bottom: auto;
+}
+
+/* left side bar main title */
+.pick-ingredients {
+    text-align: center;
+}
+
+/* left side bar container */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* recipes display */
+.card {
+    background-color: #679b9b;
+    color: white;
+}
+
+/* footer */
+#footer {
+background-color: #ff9a76;
+position: absolute;
+bottom: 0px;
+width: 100%;
+clear: both;
+}
+
+#footer p {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    font-size: 12px;
+    color: black;
+}
+
+#footer a {
+    color: black;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+    height: auto;
+    padding: 15px;
+    }
+    .row.content {height:auto;} 
+}
