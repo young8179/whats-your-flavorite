@@ -30,7 +30,6 @@ let urlArray = []
 
 
 
-
 //This function takes a array from above, and the id name of a div, and appends everything in the array as a checkbox to that div. The checkbox, on being clicked, runs a function.
 function ingredientPopulate(list, id) {
     for (let index = 0; index < list.length; index++) {
@@ -96,14 +95,18 @@ function boxFiller(urlArray) {
                 for (let index = 0; index < displayedRecipes.length; index++) {
                     const element = displayedRecipes[index];
 
-                    let card = `<div class="card">
-            <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
-            <div class="card-body">
-            <h5 class="card-title">${element.strMeal}</h5>
-            <button class="save-button" onclick="saveRecipe()">Save me!</button>
-            <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
-            </div>
-            </div>`
+                    let card = `<div class="col-md-6">
+                    <div class="card">
+                    <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
+                    <div class="card-body">
+                    <h5 class="card-title">${element.strMeal}</h5>
+                    <a href=${element.strSource} style="color: white;" target="_blank">Click Here For Recipe</a>
+                    <button class="btn" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true">
+                        Flavorite this item
+                    </i></button>
+                    </div>
+                    </div>
+                    </div>`
                     document.querySelector("#recipes").innerHTML += card
                 }
             })
@@ -122,14 +125,27 @@ function boxFiller(urlArray) {
                     for (let index = 0; index < displayedRecipes.length; index++) {
                         const element = displayedRecipes[index];
 
-                        let card = `<div class="card">
-            <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
-            <div class="card-body">
-            <h5 class="card-title">${element.strMeal}</h5>
-            <button class="save-button" onclick="saveRecipe()">Save me!</button>
-            <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
-            </div>
-            </div>`
+                        //             let card = `<div class="card">
+                        // <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
+                        // <div class="card-body">
+                        // <h5 class="card-title">${element.strMeal}</h5>
+                        // <button class="save-button" onclick="saveRecipe()">Save me!</button>
+                        // <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
+                        // </div>
+                        // </div>`
+                        let card = `<div class="col-md-6">
+                        <div class="card">
+                        <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
+                        <div class="card-body">
+                        <h5 class="card-title">${element.strMeal}</h5>
+                        <a href=${element.strSource} style="color: white;" target="_blank">Click Here For Recipe</a>
+                        <button class="btn" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true">
+                            Flavorite this item
+                        </i></button>
+                        </div>
+                        </div>
+                        </div>`
+
                         document.querySelector("#recipes").innerHTML += card
                     }
                 })
@@ -137,13 +153,47 @@ function boxFiller(urlArray) {
     }
 }
 
-function saveRecipe() {
-    this.sibling($(".card-img-top"))
-    this.sibling($("a"))
-    this.sibling($(".card-title"))
+
+function saveRecipe(img, link, title) {
+    let recipeStorageJSON = localStorage.getItem("recipeStorage")
+    let recipeStorage = JSON.parse(recipeStorageJSON)
+    let checker = 0
+    const itemToStore = {
+        Image: img,
+        Link: link,
+        Title: title
+    }
+    if (recipeStorage) {
+        for (let index = 0; index < recipeStorage.length; index++) {
+            const object = recipeStorage[index];
+            if (object.Title === itemToStore.Title) {
+                checker += 1
+            }
+
+        }
+    }
+
+    if (recipeStorage == null) {
+        recipeStorage = []
+        recipeStorage.push(itemToStore)
+        console.log("I did first if")
+    } else if (checker > 0) {
+        console.log("I did second if")
+        return
+    } else {
+        console.log("I did else")
+        recipeStorage.push(itemToStore)
+    }
+    let recipeStorageNew = JSON.stringify(recipeStorage)
+    localStorage.setItem("recipeStorage", recipeStorageNew)
+
+
 }
 
 
+
+
+console.log("Up to date!")
 ingredientPopulate(meat, "meat")
 ingredientPopulate(nuts, "nuts")
 ingredientPopulate(seaFood, "seaFood")
