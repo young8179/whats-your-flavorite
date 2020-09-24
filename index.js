@@ -22,26 +22,24 @@ const powder = ["Baking Powder", "Bicarbonate Of Soda", "Corn Starch"]
 const liquids = ["Apple Cider Vinegar", "Dark Soy Sauce", "Dry White Wine", "Enchilada Sauce", "English Mustard", "Extra Virgin Olive Oil", "Garlic Sauce", "Golden Syrup", "Honey", "Hotsauce", "Lemon Juice", "Mustard", "Raspberry Jam", "Red Wine", "Soy Sauce", "Tomato Ketchup", "Vanilla", "Vanilla Extract", "Vinegar", "White Vinegar", "White Wine", "Barbeque Sauce", "Red Wine Vinegar", "Tomato Sauce", "Maple Syrup", "Tabasco Sauce", "White Wine Vinegar", "Mayonnaise"]
 
 //https://www.themealdb.com/api/json/v1/9973533/filter.php?i=
+//these to variables enable me to check if an item is on the url string or not.
+let urlEndObject = {}
+let recipesObject = {}
+let urlArray = []
+
+
+
+
 
 //This function takes a array from above, and the id name of a div, and appends everything in the array as a checkbox to that div. The checkbox, on being clicked, runs a function.
 function ingredientPopulate(list, id) {
     for (let index = 0; index < list.length; index++) {
         const element = list[index];
         //the id is the same as the items individual ingredient call in the api. If I can get a list of the selected ids, I'm in the money.
-        const listItem = `<input onclick="urlFinalizer('${element}')" class="ingredient" id=https://www.themealdb.com/api/json/v1/9973533/filter.php?i=${element.replace(" ", "_")} type="checkbox"><label for="${element}">${element}</label></input>`
+        const listItem = `<input onclick="urlFinalizer('${element}')" class="ingredient" id=https://www.themealdb.com/api/json/v2/9973533/filter.php?i=${element.replace(" ", "_")} type="checkbox"><label for="${element}">${element}</label></input>`
         document.getElementById(id).innerHTML += listItem
     }
 }
-
-ingredientPopulate(meat, "meat")
-ingredientPopulate(nuts, "nuts")
-
-//these to variables enable me to check if an item is on the url string or not.
-let urlEndObject = {}
-let recipesObject = {}
-
-
-
 
 
 //This function will take all selected ingredients and append them to the end of our API call.
@@ -71,15 +69,90 @@ function urlFinalizer(thisIngredient) {
             // return ÷urlArray
         }
     }
-    console.log(urlArray)
-}
-
-function boxFiller() {}
-if (urlArray.length === 0) {
-    fetch()
-}
-
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+    boxFiller(urlArray)
 
 }
+
+function boxFiller(urlArray) {
+    let ingredients = document.getElementsByClassName("ingredient")
+    let counter = 0
+    for (let index = 0; index < ingredients.length; index++) {
+        const element = ingredients[index];
+        if (element.checked) {
+            counter += 1
+        }
+    }
+    if (counter === 0) {
+        urlArray = []
+    }
+    document.querySelector(".card-deck").innerHTML = ""
+    if (urlArray.length === 0) {
+        fetch("https://www.themealdb.com/api/json/v2/9973533/randomselection.php")
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                let displayedRecipes = data.meals
+                for (let index = 0; index < displayedRecipes.length; index++) {
+                    const element = displayedRecipes[index];
+
+                    let card = `<div class="card">
+            <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
+            <div class="card-body">
+            <h5 class="card-title">${element.strMeal}</h5>
+            <button class="save-button" onclick="saveRecipe()">Save me!</button>
+            <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
+            </div>
+            </div>`
+                    document.querySelector("#recipes").innerHTML += card
+                }
+            })
+    } else {
+        for (let index = 0; index < urlArray.length; index++) {
+            const element = urlArray[index];
+            fetch(element)
+                .then(function (response) {
+                    return response.json()
+                })
+                .then(function (data) {
+                    let displayedRecipes = data.meals
+                    if (displayedRecipes == null) {
+                        return
+                    }
+                    for (let index = 0; index < displayedRecipes.length; index++) {
+                        const element = displayedRecipes[index];
+
+                        let card = `<div class="card">
+            <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
+            <div class="card-body">
+            <h5 class="card-title">${element.strMeal}</h5>
+            <button class="save-button" onclick="saveRecipe()">Save me!</button>
+            <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
+            </div>
+            </div>`
+                        document.querySelector("#recipes").innerHTML += card
+                    }
+                })
+        }
+    }
+}
+
+function saveRecipe() {
+    this.sibling($(".card-img-top"))
+    this.sibling($("a"))
+    this.sibling($(".card-title"))
+}
+
+
+ingredientPopulate(meat, "meat")
+ingredientPopulate(nuts, "nuts")
+ingredientPopulate(seaFood, "seaFood")
+ingredientPopulate(liquids, "liquids")
+ingredientPopulate(powder, "powder")
+ingredientPopulate(fats, "fats")
+ingredientPopulate(sugars, "sugars")
+ingredientPopulate(veggies, "veggies")
+ingredientPopulate(fruits, "fruits")
+ingredientPopulate(bread, "bread")
+ingredientPopulate(spices, "spices")
+boxFiller(urlArray)
