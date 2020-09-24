@@ -153,7 +153,7 @@ function boxFiller(urlArray) {
     }
 }
 
-
+//this function is what will save a list of recipes to local storage
 function saveRecipe(img, link, title) {
     let recipeStorageJSON = localStorage.getItem("recipeStorage")
     let recipeStorage = JSON.parse(recipeStorageJSON)
