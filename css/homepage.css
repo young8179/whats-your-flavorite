@@ -17,7 +17,20 @@ body {
     border-radius: 0;
     background-color:#ff9a76;
     display: flex;
-    text-align: center;  
+    
+    
+}
+
+
+.hat img {
+    display: flex;
+    align-self: flex-end;
+    width: 5vw;
+    height: 10vh;
+    top: 0;
+    margin-left: 930px;
+    transform: rotate(25deg);
+    
 }
 
 /* main title */
@@ -57,7 +70,15 @@ h3 {
 .card {
     background-color: #679b9b;
     color: white;
+    margin-bottom: 5%;
 }
+
+/* row of cards */
+.card-row  {
+   
+}
+
+
 
 /* footer */
 #footer {
