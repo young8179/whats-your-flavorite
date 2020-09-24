@@ -85,7 +85,7 @@ function boxFiller(urlArray) {
     if (counter === 0) {
         urlArray = []
     }
-    document.querySelector(".card-deck").innerHTML = ""
+    document.querySelector("#recipes").innerHTML = ""
     if (urlArray.length === 0) {
         fetch("https://www.themealdb.com/api/json/v2/9973533/randomselection.php")
             .then(function (response) {
