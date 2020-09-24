@@ -40,10 +40,8 @@ ingredientPopulate(nuts, "nuts")
 let urlEndObject = {}
 let recipesObject = {}
 
-//this array will theoretically populate the page.
 
 
-//Here's what needs to happen: I need to populate a urlArray with the final URL that this function pops out, and with the id of all checked elements.
 
 
 //This function will take all selected ingredients and append them to the end of our API call.
@@ -70,22 +68,18 @@ function urlFinalizer(thisIngredient) {
         const element = ingredients[index];
         if (element.checked) {
             urlArray.push(element.id)
-
-            // if (recipesObject[finalUrl] === "active") {
-            //     recipesObject[finalUrl] = "inactive"
-            // } else {
-            //     recipesObject[finalUrl] = "active"
-            // }
-            // console.log(recipesObject[finalUrl])
-            // for (const key in recipesObject) {
-            //     if (recipesObject.hasOwnProperty(key)) {
-            //         const element = recipesObject[key];
-            //         if (element === "active") {
-            //             urlArray.unshift(key)
-            //         }
-            //     }
-            // }
-            console.log(urlArray)
+            // return ÷urlArray
         }
     }
+    console.log(urlArray)
+}
+
+function boxFiller() {}
+if (urlArray.length === 0) {
+    fetch()
+}
+
+for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+
 }
