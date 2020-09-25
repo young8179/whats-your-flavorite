@@ -5,7 +5,6 @@
     font-family: 'Playfair Display', serif;
     padding-top: 2%;
     padding-bottom: 5%;
-
 }
 
 html {
@@ -14,7 +13,7 @@ html {
 
 body {
     background-image: url();
-    margin-bottom: 100%;
+    margin-bottom: auto;
 }
 
 /* top navbar */ 
@@ -25,6 +24,27 @@ body {
     background-color:#ff9a76;
     display: flex;
     text-align: center;  
+}
+
+/* chef hat navbar */ 
+.navbar-brand {
+    height: auto;
+    transform: rotate(25deg);
+    max-width: 400px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+/* email field */
+.email-form {
+    margin-bottom: 10%; 
+    margin-top: 5%;
 }
 
 /* footer */
@@ -50,10 +70,3 @@ body {
         text-transform: uppercase;
         font-size: 13px;
     }
-
-    .H3 {
-        margin-top: 15%;
-    
-    }
-   
-    

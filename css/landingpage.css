@@ -16,13 +16,28 @@ body {
     margin-right: auto;
     border-radius: 0;
     background-color:#ff9a76;
-    display: flex;  
+    display: flex; 
+    text-align: center;   
+}
+
+/* chef hat navbar */ 
+.navbar-brand {
+    height: auto;
+    transform: rotate(25deg);
+    max-width: 400px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.navbar-brand img {
+    max-height: 50px;
 }
 
 /* main title */
 .display-2, h3 {
     font-family: 'Playfair Display', serif;
-    
 }
 
 #footer {
@@ -33,13 +48,13 @@ body {
     clear: both;
     }
     
-    #footer p {
+#footer p {
         text-align: center;
         padding: 5px;
         margin: 0;
         font-size: 12px;
         color: black;
-    }
+}
     
     #footer a {
         color: black;
@@ -74,7 +89,7 @@ body {
     
     .carousel-caption h3 {
         padding-top: 5%;
-        font-size: 100px;
+        font-size: 90px;
         color: white;
         padding-right: 25%;
         display:table-cell;
