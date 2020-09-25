@@ -18,16 +18,22 @@ function renderRecipeList(local) {
 
 
         return `
-            <div class="card col-lg-3 col-sm-12" id="${index}">
-                <a href="${list.Link}" target="_black"><img src="${list.Image}" class="card-img-top" height="240" alt="..."></a>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+            <div class="card align-items-center" id="${index}">
+                <a href="${list.Link}" target="_black"><img src="${list.Image}" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <a href="${list.Link}" target="_black"><h5 class="card-title text-dark">${list.Title}</h5></a>
-                <p class="card-text"><small class="text-muted"><input data-href="${list.Link}" data-title="${list.Title}" class="hearted" type="checkbox"/></small></p>
-                <button class="btn btn-primary" type="button" onclick="remove(${index})" id="${index}">Remove</button>
+                <a href="${list.Link}" target="_black"><h5 class="card-title">${list.Title}</h5></a>
+                <p class="card-text"><small class="text-muted"><input data-href="${list.Link}" data-title="${list.Title}" class="hearted" type="checkbox"/></small> Email to me</p>
+                <button class="btn trash-button" onclick="remove(${index})" id="${index}"><i class="fa fa-trash">
+                Remove
+                </i></button>
                 </div>
             </div>
+            </div>
                 `
-
+            //     <button class="btn" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true">
+            //     Flavorite this item
+            // </i></button>
 
     })
 

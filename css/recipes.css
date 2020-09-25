@@ -64,8 +64,10 @@ h2 {
     color: white;
     margin-bottom: 5%;
 }
-/* row of cards */
-.card-row {}
+
+.heart-button {
+    padding-left: 0px;
+}
 
 /* footer */
 #footer {
