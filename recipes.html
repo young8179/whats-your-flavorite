@@ -7,11 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/recipes.css">
     <title>What's your flavorite?</title>
 </head>
+
+<script>
+    var count = 1;
+    function setColor(btn, color) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#FFFFFF"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+</script>
 
 <!-- top nav bar -->
 
@@ -35,9 +51,11 @@
                 </li>
 
 
+
                 <li class="hat nav-item d-flex justify-content-between">
                     <img src="/images/hat-removebg-preview.png" alt="">
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -46,7 +64,7 @@
     <div class="row ">
         <div class="col-12 header text-center">
             <h2 class="display-2">Choose your Flavorites!</h2>
-            <h3>Got all the ingredients, but not sure what to make? Let Flavorite help you decide!</h3>
+            
         </div>
     </div>
 
@@ -56,7 +74,7 @@
             <div class="row content h-100">
                 <div class="col-sm-4 sidenav h-100">
                     <fieldset>
-                        <legend class="pick-ingredients">Pick Your Ingredients</legend>
+                        <legend class="pick-ingredients">Pick your ingredients</legend>
                         <hr>
                         <div id="meatBox">
                             <fieldset>
@@ -81,7 +99,7 @@
                             <fieldset>
                                 <legend data-toggle="collapse" data-target="#veggies" aria-expanded="false"
                                     aria-controls="veggies">Vegtables</legend>
-                                <div id="veggies"></div>
+                                <div id="veggies"><br></div>
                             </fieldset>
                         </div>
                         <hr>
@@ -183,6 +201,8 @@
                 href="https://www.linkedin.com/in/thor-hlavaty-7589431b5/" target="_blank">Thor</a> <br>Copyright &copy;
             2020</p>
     </footer>
+
+    
 
     <!-- Optional JavaScript -->
     <script src="index.js"></script>
