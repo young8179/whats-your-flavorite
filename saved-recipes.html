@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/saved-recipes.css">
@@ -18,7 +20,8 @@
 
     <!-- top nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand pull-right navbar-right" href="#" >
+            <img src="/images/hat-removebg-preview.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria- c
             ontrols="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,10 +38,6 @@
                     <a class="nav-link" href="saved-recipes.html">Your Flavorites</a>
                 </li>
 
-
-                <li class="hat nav-item d-flex justify-content-between">
-                    <img src="/images/hat-removebg-preview.png" alt="">
-                </li>
             </ul>
         </div>
     </nav>
@@ -52,10 +51,10 @@
     <!-- CONTAINER -->
     <div class="container h-100">
         <div class="container-fluid text-left h-100">
-            <div class="row content h-100" id="cardContainer">
+            <div class="row content h-100 justify-content-center" id="cardContainer">
 
                 <!-- CARDS TO DISPLAY SAVED RECIPES -->
-                <div class="card-deck col-12">
+                <!-- <div class="card-deck col-12">
                     <div class="card">
                         <img src="dt.jpg" class="card-img-top" height="240" alt="...">
                         <div class="card-body">
@@ -64,18 +63,18 @@
                             <p class="card-text"><small class="text-muted">Source Cited</small></p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
     </div>
-    <div class="H3 form-row justify-content-center">
-        <h3>Want To Save The Recipes For Later?</h3>
-    </div>
+
     <!-- EMAIL INPUT -->
     <form id="form">
         <div class="form-row justify-content-center">
+            <legend class="form-legend">Want To Save The Recipes For Later?</legend>
             <div class="col-auto">
+                
                 <label class="sr-only" for="inlineFormInput">Name</label>
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Enter Name">
             </div>
