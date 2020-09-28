@@ -8,8 +8,14 @@ html, body {
     margin-bottom: auto;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    height: 140%;
+    height: 100vh;
 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 /* top navbar */
@@ -60,8 +66,9 @@ html, body {
 
 /* email field */
 #form {
-    margin-bottom: 10%;
-    margin-top: 1%;
+    margin-bottom: 30px;
+    margin-top: auto;
+    padding-top: 30px;
 }
 
 /* email legend */
@@ -79,7 +86,7 @@ html, body {
 /* footer */
 #footer {
     background-color: #ff9a76;
-    position: sticky;
+    
   
     width: 100%;
     clear: both;
