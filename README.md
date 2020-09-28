@@ -13,17 +13,20 @@
 
 ## :hammer_and_wrench: Used Technologies 
 
+* JavaScript
+* JQuery
+* HTML
+* CSS
+* Bootstrap
+* Font Awesome
 <br>
--A lot of JS with a little bit of JQuery.
--A lot of HTML bolstered by a little bit of Bootstrap.
--A good ammount of CSS.
 <br>
 
 ## :clipboard: List of the APIs used
 
+- Recipes: https://www.themealdb.com/api.php
+- Email: https://www.emailjs.com/
 <br>
-https://www.themealdb.com/api.php
-https://www.emailjs.com/
 <br>
 
 ## 🖥 Preview
@@ -32,19 +35,21 @@ https://www.emailjs.com/
 <br>
 
 ## ⚙ How to run 
-
+### 1. Fork this respository
+Click the Fork button on the upper right-hand side of this repository's page.
+### 2. Clone the repository
+1. Under the repository name, click on the code button and copy the clone URL for the repository.
+2. Open your terminal and type ```git clone https://github.com/alessandraburckhalter/front-end-project```
+### 3. Open the folder
+After cloning the repository, use your favorite code editor to open the folder. We recommend [Visual Studio Code](https://code.visualstudio.com/).
+### 4. Open the file
+Open the file with the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension on Visual Studio Code.
 <br>
 <br>
 
 ## :heavy_exclamation_mark: Challenges
 
-<br>
-One of the biggest challenges was overestimating how robust the mealdb is. It really made us narrow the scope our project. Despite that, we still focused on delivering an atractive product. It's not a very powerful site, but I think we're all happy with how it looks.
-<br>
-
-## :soon:  Next Steps
-
-
+One of the biggest challenges was overestimating how robust the mealdb is. It really made us narrow the scope our project. Despite that, we still focused on delivering an atractive product. It's not a very powerful site, but we're all happy with how it looks.
 <br>
 <br>
 
