@@ -18,8 +18,9 @@ function renderRecipeList(local) {
 
 
         return `
+
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-            <div class="card align-items-center" id="${index}">
+            <div class="card align-items-center" id="${index}" style="height: 430px;">
                 <a href="${list.Link}" target="_black"><img src="${list.Image}" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <a href="${list.Link}" target="_black"><h5 class="card-title">${list.Title}</h5></a>
