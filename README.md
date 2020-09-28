@@ -8,6 +8,9 @@
 
 ## :book: About the project
 
+Our website design, "What's Your Flavorite",  was built on providing two major functionalities. First, providing the user the ability to input the grocery items they have at home and collect the results of all the recipes they can make. The other, was giving the user the ability to "favorite" and email themselves recipes of their choosing. In order to make this possible, we pulled from two API's. The first API, "MealDB", provided a host of valuable information. MealDB contained the recipe name, url and picture. What we needed to do to support this API to work with our idea, was to create our own array's of food items for the checkboxes. Our Second API, "Email.js", enabled the ability to send information held in local storage (the "favorited" recipes) to send an email of the user's choice. From a design perspective, we wanted to reflect the theme as closely as possible. Our theme was all about food and staying in to cook. To match that, we aimed for earthy backgrounds and colors. Our second and third page was created to mimic what the users dining table or kitchen may look like. In conclusion, our site was made to be a quick and efficient way for the user to find delicious recipes all from the comfort of their home.
+
+
 <br>
 <br>
 
