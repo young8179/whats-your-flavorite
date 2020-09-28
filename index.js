@@ -73,6 +73,8 @@ function urlFinalizer(thisIngredient) {
 }
 
 function boxFiller(urlArray) {
+    let recipeStorageJSON = localStorage.getItem("recipeStorage")
+    let recipeStorage = JSON.parse(recipeStorageJSON)
     let ingredients = document.getElementsByClassName("ingredient")
     let counter = 0
     for (let index = 0; index < ingredients.length; index++) {
@@ -100,13 +102,26 @@ function boxFiller(urlArray) {
                     <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
                     <div class="card-body">
                     <h5 class="card-title">${element.strMeal}</h5>
+
+                    <a href=${element.strSource} style="color: white;" target="_blank">Click Here For Recipe</a>
+                    <button class="btn heart-button" id='${element.strMeal}' onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}');colorChange('${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
+
                     <a href=${element.strSource} style="color: white;" target="_blank">Click here for recipe</a>
                     <button class="btn heart-button" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
+
                     </i></button>
                     </div>
                     </div>
                     </div>`
                     document.querySelector("#recipes").innerHTML += card
+                    if (recipeStorage) {
+                        for (let index = 0; index < recipeStorage.length; index++) {
+                            const flavorite = recipeStorage[index];
+                            if (flavorite.Title === element.strMeal) {
+                                colorChange(element.strMeal)
+                            }
+                        }
+                    }
                 }
             })
     } else {
@@ -124,38 +139,45 @@ function boxFiller(urlArray) {
                     for (let index = 0; index < displayedRecipes.length; index++) {
                         const element = displayedRecipes[index];
 
-                        //             let card = `<div class="card">
-                        // <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
-                        // <div class="card-body">
-                        // <h5 class="card-title">${element.strMeal}</h5>
-                        // <button class="save-button" onclick="saveRecipe()">Save me!</button>
-                        // <a href=${element.strSource} style="color: white;">Click Here For Recipe</a>
-                        // </div>
-                        // </div>`
                         let card = `<div class="col-md-6">
                         <div class="card">
                         <img src="${element.strMealThumb}" class="card-img-top" height="240" alt="${element.strMeal}">
                         <div class="card-body">
                         <h5 class="card-title">${element.strMeal}</h5>
                         <a href=${element.strSource} style="color: white;" target="_blank">Click Here For Recipe</a>
-                        <button class="btn heart-button" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
+                        <button class="btn heart-button" id='${element.strMeal}' onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}');colorChange('${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
                         </i></button>
                         </div>
                         </div>
                         </div>`
 
                         document.querySelector("#recipes").innerHTML += card
+                        if (recipeStorage) {
+                            for (let index = 0; index < recipeStorage.length; index++) {
+                                const flavorite = recipeStorage[index];
+                                if (flavorite.Title === element.strMeal) {
+                                    colorChange(element.strMeal)
+                                }
+                            }
+                        }
                     }
                 })
         }
     }
 }
 
+
+
+function colorChange(id) {
+    document.getElementById(id).textContent = "♥ Your Very Flavorite!"
+    document.getElementById(id).setAttribute("style", "color:pink")
+}
 //this function is what will save a list of recipes to local storage
 function saveRecipe(img, link, title) {
     let recipeStorageJSON = localStorage.getItem("recipeStorage")
     let recipeStorage = JSON.parse(recipeStorageJSON)
     let checker = 0
+
     const itemToStore = {
         Image: img,
         Link: link,
