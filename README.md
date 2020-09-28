@@ -14,11 +14,16 @@
 ## :hammer_and_wrench: Used Technologies 
 
 <br>
+-A lot of JS with a little bit of JQuery.
+-A lot of HTML bolstered by a little bit of Bootstrap.
+-A good ammount of CSS.
 <br>
 
 ## :clipboard: List of the APIs used
 
 <br>
+https://www.themealdb.com/api.php
+https://www.emailjs.com/
 <br>
 
 ## 🖥 Preview
@@ -34,6 +39,7 @@
 ## :heavy_exclamation_mark: Challenges
 
 <br>
+One of the biggest challenges was overestimating how robust the mealdb is. It really made us narrow the scope our project. Despite that, we still focused on delivering an atractive product. It's not a very powerful site, but I think we're all happy with how it looks.
 <br>
 
 ## :soon:  Next Steps
