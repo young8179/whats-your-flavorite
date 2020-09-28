@@ -33,6 +33,27 @@ Our website design, "What's Your Flavorite",  was built on providing two major f
 <br>
 
 ## 🖥 Preview
+#### :point_down: Home Page
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/68092946/94462130-0d497f80-0189-11eb-9274-63f34371dab8.gif)
+
+<br /> 
+<br /> 
+
+#### :point_down: Recipes Page
+![Screen-Recording-2020-09-28-at-1](https://user-images.githubusercontent.com/68092946/94468896-25260100-0193-11eb-88c1-3e33cb309252.gif)
+
+<br /> 
+<br /> 
+
+#### :point_down: Your Flavorites Page
+![Screen-Recording-2020-09-28-at-2](https://user-images.githubusercontent.com/68092946/94469749-a205aa80-0194-11eb-9d24-774f0db14beb.gif)
+
+<br /> 
+<br /> 
+
+#### :point_down: Email received 
+<img width="1053" alt="Screen Shot 2020-09-28 at 2 08 20 PM" src="https://user-images.githubusercontent.com/68092946/94469881-cf525880-0194-11eb-8e57-9891a8638f5c.png">
+
 
 <br>
 <br>
