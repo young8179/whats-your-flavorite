@@ -106,9 +106,7 @@ function boxFiller(urlArray) {
                     <a href=${element.strSource} style="color: white;" target="_blank">Click Here For Recipe</a>
                     <button class="btn heart-button" id='${element.strMeal}' onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}');colorChange('${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
 
-                    <a href=${element.strSource} style="color: white;" target="_blank">Click here for recipe</a>
-                    <button class="btn heart-button" onclick="saveRecipe('${element.strMealThumb}', '${element.strSource}', '${element.strMeal}')"><i class="fa fa-heart" aria-hidden="true"> Flavorite this item
-
+            
                     </i></button>
                     </div>
                     </div>
