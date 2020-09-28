@@ -22,6 +22,7 @@ Our website design, "What's Your Flavorite",  was built on providing two major f
 * CSS
 * Bootstrap
 * Font Awesome
+* APIs
 <br>
 <br>
 
