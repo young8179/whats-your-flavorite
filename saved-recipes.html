@@ -6,65 +6,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    
+    <!-- Bootstrap CSS --> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/saved-recipes.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-    <title>What's your flavorite?</title>
+    <title>What's Your Flavorite?</title>
 </head>
 
 <body>
-
     <!-- top nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand pull-right navbar-right" href="#" >
             <img src="/images/hat-removebg-preview.png" alt=""></a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria- c
             ontrols="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav d-flex align-items-md-center">
                 <li class="nav-item active">
                     <a class="nav-link" href="landingpage.html">Home <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="recipes.html">Recipes</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="saved-recipes.html">Your Flavorites</a>
                 </li>
-
             </ul>
         </div>
     </nav>
 
-    <!-- Heading -->
+    <!-- Heading main title -->
     <div class="row ">
         <div class="col-12 header text-center">
             <h2 class="display-2">Here are your flavorites!</h2>
         </div>
     </div>
+
     <!-- CONTAINER -->
     <div class="container h-100">
         <div class="container-fluid text-left h-100">
             <div class="row content h-100 justify-content-center" id="cardContainer">
-
-                <!-- CARDS TO DISPLAY SAVED RECIPES -->
-                <!-- <div class="card-deck col-12">
-                    <div class="card">
-                        <img src="dt.jpg" class="card-img-top" height="240" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Recipe</h5>
-                            <p class="card-text">Info</p>
-                            <p class="card-text"><small class="text-muted">Source Cited</small></p>
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
         </div>
     </div>
@@ -73,23 +62,27 @@
     <form id="form">
         <div class="form-row justify-content-center">
             <legend class="form-legend">Want To Save The Recipes For Later?</legend>
-            <div class="col-auto">
-                
+
+            <div class="col-auto">                
                 <label class="sr-only" for="inlineFormInput">Name</label>
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Enter Name">
             </div>
+
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInputGroup">Username</label>
+
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">@</div>
                     </div>
+                
                     <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="Email">
                 </div>
             </div>
             <div class="col-auto">
             </div>
             <div class="col-auto">
+
                 <!-- changed from button to input -->
                 <input type="submit" class="btn btn-primary mb-2" value="Send Email">
             </div>
@@ -98,9 +91,6 @@
     </div>
     </div>
     </div>
-
-
-
 
     <!-- Footer -->
     <footer id="footer">
@@ -122,6 +112,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+    
 </body>
-
 </html>

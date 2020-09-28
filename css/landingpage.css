@@ -5,6 +5,7 @@ html {
     position: relative;
 }
 
+/* body container */
 .container {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -103,8 +104,8 @@ html {
 }
 
 
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+/* changes on small screens */
+@media screen and (max-width: 720px) {
     .sidenav {
         height: auto;
         padding: 15px;
@@ -112,6 +113,23 @@ html {
 
     .row.content {
         height: auto;
+    }
+
+    .welcome {
+        font-size: 20px;
+    }
+
+    .welcome2 {
+        font-size: 15px;
+        margin-left: 19px;
+    }
+
+    .content-site {
+        font-size: 15px;
+    }
+
+    .content-site h1, h3 {
+        font-size: 20px;
     }
 
 }

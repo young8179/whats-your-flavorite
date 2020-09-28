@@ -1,12 +1,15 @@
 /* Header Font */
 @import url("https://fonts.googleapis.com/css?family=Chivo:300,700%7CPlayfair+Display:700i");
+
 html {
     position: relative;
 }
+
 body {
     background-image: url(/images/lighter.jpeg);
     margin-bottom: 10%;
 }
+
 /* top navbar */
 .navbar {
     margin-left: auto;
@@ -16,6 +19,7 @@ body {
     border: solid 2px rgb(78, 59, 59);
     display: flex;
 }
+
 /* chef hat navbar */
 .navbar-brand {
     height: auto;
@@ -26,29 +30,32 @@ body {
     right: 0;
     top: 5px;
 }
+
 .navbar-brand img {
     max-height: 50px;
 }
+
 /* main title */
 .display-2 {
     font-family: 'Playfair Display', serif;
     padding-top: 2%;
     padding-bottom: 1%;
-}
-h2 {
     color: #ffeadb;
 }
+
 /* page container */
 .container {
     padding-top: 4%;
     height: 100vh;
     padding-bottom: auto;
 }
+
 /* left side bar main title */
 .pick-ingredients {
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
+
 /* left side bar container */
 .sidenav {
     padding-top: 20px;
@@ -57,6 +64,13 @@ h2 {
     color: white;
 }
 
+.line hr {
+    border: 0;
+    clear:both;
+    display:block;             
+    background-color: #ffeadb;
+    height: 1px;
+}
 
 /* recipes display */
 .card {
@@ -65,8 +79,10 @@ h2 {
     margin-bottom: 5%;
 }
 
+/* heart icon on recipes cards */
 .heart-button {
     padding-left: 0px;
+    color: white;
 }
 
 /* footer */
@@ -77,6 +93,7 @@ h2 {
     width: 100%;
     clear: both;
 }
+
 #footer p {
     text-align: center;
     padding: 5px;
@@ -84,19 +101,27 @@ h2 {
     font-size: 12px;
     color: black;
 }
+
 #footer a {
     color: black;
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 13px;
 }
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
+
+/* changes on small screens */
+@media screen and (max-width: 700px) {
     .sidenav {
         height: auto;
         padding: 15px;
     }
+
     .row.content {
         height: auto;
     }
+
+    .display-2 { 
+        text-align: center; 
+        font-size: 50px;
+    } 
 }
