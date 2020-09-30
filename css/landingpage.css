@@ -43,7 +43,7 @@ html, body {
 
 /* top picture division */
 .header-site{
-    background-image: url(/images/brooke-lark-08bOYnH_r_E-unsplash.jpg);
+    background-image: url(../images/brooke-lark-08bOYnH_r_E-unsplash.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -72,7 +72,7 @@ html, body {
 
 /* bottom picture division */
 .img-site {
-    background-image: url(/images/katie-smith-uQs1802D0CQ-unsplash.jpg);
+    background-image: url(../images/katie-smith-uQs1802D0CQ-unsplash.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;

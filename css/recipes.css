@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-image: url(/images/lighter.jpeg);
+    background-image: url(../images/lighter.jpeg);
     margin-bottom: 10%;
 }
 
